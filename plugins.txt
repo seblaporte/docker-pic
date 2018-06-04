@@ -28,6 +28,7 @@ github:1.29.0
 ace-editor:1.1
 credentials:2.1.16
 ssh-slaves:1.26
+docker-custom-build-environment:1.7.3
 workflow-multibranch:2.19
 bouncycastle-api:2.16.2
 gradle:1.28
