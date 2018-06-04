@@ -16,6 +16,7 @@ hudsonRealm.createAccount(user, pass)
 Jenkins.instance.setSecurityRealm(hudsonRealm)
 
 def strategy = new FullControlOnceLoggedInAuthorizationStrategy()
+strategy.setAllowAnonymousRead(false)
 Jenkins.instance.setAuthorizationStrategy(strategy)
 
 Jenkins.instance.save()
