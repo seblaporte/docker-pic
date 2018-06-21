@@ -16,9 +16,9 @@ echo "mypassword" | docker secret create jenkins-pass -
 ### Déploiement de la stack
 
 * fichier pic-stack.yml  
-  Ce fichier décrit l'ensemble des service qui seront déployés.
+  Ce fichier décrit l'ensemble des services qui seront déployés.
   * jenkins
-  * nexus
   * sonarqube
+  * nexus  
   * traefik
   * ... 
