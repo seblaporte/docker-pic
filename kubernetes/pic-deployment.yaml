@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: jenkins
-        image: seblaporte/jenkins:v1.0
+        image: seblaporte/jenkins:v1.1
         imagePullPolicy: Always
         volumeMounts:
           - name: secrets
