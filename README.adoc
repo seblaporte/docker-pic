@@ -1,0 +1,12 @@
+= docker-pic
+
+Conteneurisation d'une plateforme d'intégration continue.
+
+Ce projet contient plusieurs versions pour le déploiement de la PIC :
+
+- Le dossier `swarm` permet de déployer le PIC avec Docker Swarm
+- Le dossier `kubernetes` contient les fichiers YAML permettant le déploiement avec Kubernetes
+
+Les projets utilisent les images du Docker Hub suivantes :
+
+- Jenkins : https://hub.docker.com/r/seblaporte/jenkins/[seblaporte/jenkins]

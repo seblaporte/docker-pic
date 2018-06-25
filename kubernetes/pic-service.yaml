@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+
+metadata:
+  labels:
+    app: usine-logicielle
+  name: usine-service
+  namespace: usine-logicielle
+
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: 30002
+    targetPort: 8080
+  selector:
+    app: usine-logicielle

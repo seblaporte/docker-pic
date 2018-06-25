@@ -1,0 +1,37 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+
+metadata:
+  labels:
+    app: usine-logicielle
+  name: usine-deployment
+  namespace: usine-logicielle
+
+spec:
+  replicas: 1
+  revisionHistoryLimit: 5
+  selector:
+    matchLabels:
+      app: usine-logicielle
+  template:
+    metadata:
+      labels:
+        app: usine-logicielle
+    spec:
+      containers:
+      - name: jenkins
+        image: seblaporte/jenkins:v1.0
+        imagePullPolicy: Always
+        volumeMounts:
+          - name: secrets
+            mountPath: "/etc/secrets"
+            readOnly: true
+        ports:
+          - name: web-interface
+            containerPort: 8080
+          - name: api
+            containerPort: 50000
+      volumes:
+        - name: secrets
+          secret:
+            secretName: usine-secret

@@ -1,16 +1,12 @@
-# docker-pic
-Conteneurisation d'une plateforme d'intégration continue
+# Déploiement avec Docker Swarm
 
 ### Jenkins
 
-L'initialisation du compte administrateur s'appuie sur les infos contenues dans docker secret.
-avant le premier démarrage du container il faut créer dans docker secret le user et son mdp.
+L'initialisation du compte administrateur s'appuie sur les infos contenues dans docker secret. Avant le premier démarrage du container il faut créer dans docker secret le user et son mdp.
 
 ```bash
-
 echo "myuser" | docker secret create jenkins-user -
 echo "mypassword" | docker secret create jenkins-pass -
-
 ```
 
 ### Déploiement de la stack
@@ -21,4 +17,4 @@ echo "mypassword" | docker secret create jenkins-pass -
   * sonarqube
   * nexus  
   * traefik
-  * ... 
+  * ...
