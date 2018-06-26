@@ -12,7 +12,9 @@ NOTE: Les fichiers de ce projet sont configurés avec le namespace `usine-logici
 
 [source,bash]
 ----
+kubectl create -f pic-namespace.yaml
 kubectl create -f pic-secret.yaml
-kubectl create -f pic-deployment.yaml
-kubectl create -f pic-service.yaml
+kubectl create -f jenkins-deployment.yaml
+kubectl create -f jenkins-master-service.yaml
+kubectl create -f jenkins-service.yaml
 ----
