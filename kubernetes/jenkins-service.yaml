@@ -3,8 +3,8 @@ apiVersion: v1
 
 metadata:
   labels:
-    app: usine-logicielle
-  name: usine-service
+    app: jenkins
+  name: jenkins-service
   namespace: usine-logicielle
 
 spec:
@@ -14,4 +14,4 @@ spec:
     nodePort: 30002
     targetPort: 8080
   selector:
-    app: usine-logicielle
+    app: jenkins

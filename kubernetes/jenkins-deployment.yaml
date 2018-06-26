@@ -3,8 +3,8 @@ apiVersion: extensions/v1beta1
 
 metadata:
   labels:
-    app: usine-logicielle
-  name: usine-deployment
+    app: jenkins
+  name: jenkins
   namespace: usine-logicielle
 
 spec:
@@ -12,15 +12,15 @@ spec:
   revisionHistoryLimit: 5
   selector:
     matchLabels:
-      app: usine-logicielle
+      app: jenkins
   template:
     metadata:
       labels:
-        app: usine-logicielle
+        app: jenkins
     spec:
       containers:
       - name: jenkins
-        image: seblaporte/jenkins:v1.0
+        image: seblaporte/jenkins:latest
         imagePullPolicy: Always
         volumeMounts:
           - name: secrets

@@ -1,0 +1,21 @@
+kind: Service
+apiVersion: v1
+
+metadata:
+  labels:
+    app: jenkins
+  name: jenkins-master
+  namespace: usine-logicielle
+
+spec:
+  ports:
+  - name: "web-interface"
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+  - name: "api"
+    protocol: TCP
+    port: 50000
+    targetPort: 50000
+  selector:
+    app: jenkins
