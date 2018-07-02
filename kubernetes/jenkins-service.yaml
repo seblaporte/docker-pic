@@ -1,22 +1,18 @@
-kind: Service
-apiVersion: v1
-
-metadata:
-  labels:
-    app: jenkins
-  name: jenkins-service
-  namespace: usine-logicielle
-
-spec:
-  type: NodePort
-  ports:
-  - port: 8080
-    name: "interface"
-    nodePort: 30002
-    targetPort: 8080
-  - port: 50000
-    name: "slave"
-    nodePort: 30010
-    targetPort: 50000
-  selector:
-    app: jenkins
+{
+      "kind": "Service",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "example-service",
+        "namespace": "usine-logicielle"
+      },
+      "spec": {
+        "ports": [{
+          "port": 8080,
+          "targetPort": 8080
+        }],
+        "selector": {
+          "app": "jenkins"
+        },
+        "type": "LoadBalancer"
+      }
+    }
