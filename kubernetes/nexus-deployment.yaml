@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nexus
+  namespace: usine-logicielle
+
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: nexus
+    spec:
+      containers:
+        - name: nexus
+          image: sonatype/nexus3:3.3.1
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: NEXUS_AUTHORIZATION
+              valueFrom:
+                secretKeyRef:
+                  key: nexus.authorization
+                  name: nexus-secrets
+          ports:
+            - name: web-ui
+              containerPort: 8081
+            - name: api
+              containerPort: 5000
+          volumeMounts:
+            - name: nexus-data
+              mountPath: /nexus-data
+      volumes:
+        - name: nexus-data
+          hostPath:
+            path: /Users/sebastien/Developpement/data
+        - name: nexus-secrets
+          secret:
+            secretName: nexus-secrets

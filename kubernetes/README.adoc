@@ -18,3 +18,20 @@ kubectl create -f jenkins-deployment.yaml
 kubectl create -f jenkins-master-service.yaml
 kubectl create -f jenkins-service.yaml
 ----
+
+== Accès aux outils
+
+=== Kubernetes Web UI
+
+[source,bash]
+----
+kubectl proxy
+----
+
+URL : http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+
+=== Jenkins
+
+- URL : http://127.0.0.1:8080
+- Utilisateur : admin
+- Mot de passe : P@ssw0rd!

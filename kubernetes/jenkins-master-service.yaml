@@ -8,12 +8,13 @@ metadata:
   namespace: usine-logicielle
 
 spec:
+  type: ClusterIP
   ports:
-  - name: "web-interface"
+  - name: web-interface
     protocol: TCP
     port: 8080
     targetPort: 8080
-  - name: "api"
+  - name: api
     protocol: TCP
     port: 50000
     targetPort: 50000

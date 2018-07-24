@@ -2,15 +2,15 @@ kind: Service
 apiVersion: v1
 
 metadata:
-  name: example-service
+  name: nexus-service
   namespace: usine-logicielle
 
 spec:
   type: LoadBalancer
   ports:
-    - name: web-interface
+    - name: web-ui
       protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 8081
+      targetPort: 8081
   selector:
-    app: jenkins
+    app: nexus
